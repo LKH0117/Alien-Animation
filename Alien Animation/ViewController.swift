@@ -20,13 +20,15 @@ class ViewController: UIViewController {
         myImageView.image = UIImage(named: "frame1.png")
         counter.text = String(1)
     }
-
+    
     @IBAction func update(_ sender: Any) {
+        // 1~5까지 체크를한다 1일때 상승 5가되면 하락
         if index == 1 {
             check = true
         }else if index == 5 {
             check = false
         }
+        // 1~5까지 체크한것에 대해 상승과 감소를 하여 이미지를 출력한다.
         if check == true {
             index = index + 1
             counter.text = String(index)
