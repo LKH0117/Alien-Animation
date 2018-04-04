@@ -22,13 +22,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func update(_ sender: Any) {
-        if index == 5 {
-            index = 1
-        } else {
-            index = index + 1
+        if index == 1 {
+            check = true
+        }else if index == 5 {
+            check = false
         }
-        myImageView.image = UIImage(named: "frame\(index).png")
-        counter.text = String(index)
+        if check == true {
+            index = index + 1
+            counter.text = String(index)
+            myImageView.image = UIImage(named: "frame\(index).png")
+        } else if check == false{
+            index = index - 1
+            counter.text = String(index)
+            myImageView.image = UIImage(named: "frame\(index).png")
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
